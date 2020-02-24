@@ -1,0 +1,58 @@
+:root {
+  --bg-color: #2196F3;
+  --alert-bg-color: #F3A121;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+
+  background-color: var(--bg-color);
+  color: #f5d64e;
+  font-family: 'Bangers', cursive;
+  font-size: 12px;
+}
+
+h1 {
+  margin-bottom: 1.5em;
+  font-size: 4em;
+}
+
+.goose-container {
+  width: 250px;
+}
+
+button {
+  /* reset styles */
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+
+  background: transparent;
+
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+}
+
+.goose-action {
+  padding: 1em;
+  margin-bottom: 1em;
+
+  font-family: 'Bangers', cursive;
+  font-size: 4em;
+  color: orange;
+  cursor: pointer;
+}
