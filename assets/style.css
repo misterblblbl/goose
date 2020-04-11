@@ -60,7 +60,7 @@ button {
   margin-top: 7vh;
   margin-bottom: 5vh;
 
-  font-family: 'Bangers', cursive;
+  font-family: 'Bangers', sans-serif;
   font-size: 8rem;
   cursor: pointer;
 }
