@@ -15,9 +15,4 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
-	// err := http.ListenAndServeTLS(":8443", "server.crt", "server.key", nil)
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
 }
