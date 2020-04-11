@@ -18,7 +18,7 @@ body {
 
   background-color: var(--bg-color);
   color: var(--f-color);
-  font-family: 'Bangers', cursive;
+  font-family: 'Bangers', sans-serif;
 }
 
 h1 {
