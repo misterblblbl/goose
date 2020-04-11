@@ -11,12 +11,20 @@
   <title>Goose</title>
 </head>
 <body id="goose-bg">
-  <button class="goose-action" id="shake-action" type="button">
+  <button class="goose-btn goose-permission" id="action-permission" type="button">
+    Press to start
+  </button>
+
+  <button class="goose-btn goose-shake" id="action-shake" type="button">
     Shake the goose!
   </button>
 
   <main class="goose-container">
     <img src="goose.svg" alt="White shakable gooose" width="250">
+
+    <audio autoplay id="audio-goose">
+      <source src="honk.mp3" type="audio/mp3">
+    </audio>
   </main>
 
   <script src="script.js"></script>

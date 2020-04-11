@@ -47,7 +47,7 @@ button {
   -webkit-appearance: none;
 }
 
-.goose-action {
+.goose-btn {
   padding: 1em;
   margin-bottom: 1em;
 
@@ -55,4 +55,13 @@ button {
   font-size: 4em;
   color: orange;
   cursor: pointer;
+}
+
+.goose-permission {
+  color: #cddc39;
+}
+
+.goose-shake {
+  color: orange;
+  display: none;
 }
