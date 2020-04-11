@@ -1,0 +1,24 @@
+{
+  "name": "goose",
+  "version": "1.0.0",
+  "description": "Honking goose app",
+  "main": "index.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint assets/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/misterblblbl/goose.git"
+  },
+  "author": "Alexandra Godun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/misterblblbl/goose/issues"
+  },
+  "homepage": "https://github.com/misterblblbl/goose#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2"
+  }
+}
