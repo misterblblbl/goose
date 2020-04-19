@@ -2,7 +2,7 @@ const permissionBtn = document.getElementById('action-permission');
 const actionBtn = document.getElementById('action-shake');
 const audio = document.getElementById('audio-goose');
 
-if (!DeviceMotionEvent.requestPermission) {
+if (window.DeviceMotionEvent && !DeviceMotionEvent.requestPermission) {
   permissionBtn.style.display = 'none';
   actionBtn.style.display = 'block';
 }
@@ -38,16 +38,18 @@ const deviceMotionHandler = (e) => {
 function requestPermissionHahdler() {
   audio.play();
 
-  DeviceMotionEvent.requestPermission()
-    .then((permissionState) => {
-      if (permissionState === 'granted') {
-        permissionBtn.style.display = 'none';
-        actionBtn.style.display = 'block';
+  if (window.DeviceMotionEvent) {
+    DeviceMotionEvent.requestPermission()
+      .then((permissionState) => {
+        if (permissionState === 'granted') {
+          window.addEventListener('devicemotion', deviceMotionHandler);
+        }
+      })
+      .catch(console.error);
+  }
 
-        window.addEventListener('devicemotion', deviceMotionHandler);
-      }
-    })
-    .catch(console.error);
+  permissionBtn.style.display = 'none';
+  actionBtn.style.display = 'block';
 }
 
 permissionBtn.addEventListener('click', requestPermissionHahdler);
