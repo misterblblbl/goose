@@ -1,4 +1,3 @@
-
 importScripts('/cache-polyfill.js');
 
 const cacheName = 'goose-app-v1';
@@ -10,6 +9,7 @@ const filesToCache = [
   '/styles/main.css',
   '/scripts/main.js',
   '/sounds/honk.mp3',
+  '/images/icon/160.png',
 ];
 
 self.addEventListener('install', (e) => {
@@ -76,4 +76,15 @@ self.addEventListener('fetch', (e) => {
         .then((response) => (response || fetch(e.request))),
     );
   }
+});
+
+self.addEventListener('activate', (e) => {
+  e.waitUntil(
+    caches.keys()
+      .then((cacheNames) => Promise.all(
+        cacheNames
+          .filter((name) => name !== cacheName)
+          .map((name) => caches.delete(name)),
+      )),
+  );
 });
