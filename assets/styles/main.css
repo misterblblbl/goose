@@ -61,7 +61,7 @@ button {
   margin-bottom: 5vh;
 
   font-family: 'Bangers', sans-serif;
-  font-size: 8rem;
+  font-size: 13vw;;
   cursor: pointer;
 }
 
@@ -80,6 +80,6 @@ button {
 .goose-pic {
   width: 73vw;
   height: auto;
-  max-width: 500px;
+  max-width: 70%;
   padding-bottom: 4rem;
 }
