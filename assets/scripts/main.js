@@ -2,12 +2,12 @@ const permissionBtn = document.getElementById('action-permission');
 const actionBtn = document.getElementById('action-shake');
 const audio = document.getElementById('audio-goose');
 
-if (window.DeviceMotionEvent && !DeviceMotionEvent.requestPermission) {
+const playAudioHandler = () => audio.play();
+
+const replaceButtons = () => {
   permissionBtn.style.display = 'none';
   actionBtn.style.display = 'block';
 }
-
-const playAudioHandler = () => audio.play();
 
 /* eslint-disable */
 let x0 = 0, x1 = 0;
@@ -16,7 +16,9 @@ let z0 = 0, z1 = 0;
 /* eslint-enable */
 
 const deviceMotionHandler = (e) => {
-  const sensitivity = 15;
+  const sensitivity = 10;
+
+  console.log("deviceMotionHandler");
 
   x0 = e.accelerationIncludingGravity.x;
   y0 = e.accelerationIncludingGravity.y;
@@ -26,6 +28,7 @@ const deviceMotionHandler = (e) => {
     const change = Math.abs(x0 - x1 + y0 - y1 + z0 - z1);
 
     if (change > sensitivity) {
+      console.log(change > sensitivity);
       audio.play();
     }
 
@@ -35,10 +38,10 @@ const deviceMotionHandler = (e) => {
   }, 150);
 };
 
-function requestPermissionHahdler() {
-  audio.play();
+const requestPermissionHahdler = (e) => {
+  const isSafariIOS = window.DeviceMotionEvent && DeviceMotionEvent.requestPermission;
 
-  if (window.DeviceMotionEvent) {
+  if (isSafariIOS) {
     DeviceMotionEvent.requestPermission()
       .then((permissionState) => {
         if (permissionState === 'granted') {
@@ -48,9 +51,10 @@ function requestPermissionHahdler() {
       .catch(console.error);
   }
 
-  permissionBtn.style.display = 'none';
-  actionBtn.style.display = 'block';
+  replaceButtons();
+  window.addEventListener('devicemotion', deviceMotionHandler);
 }
 
 permissionBtn.addEventListener('click', requestPermissionHahdler);
+
 actionBtn.addEventListener('click', playAudioHandler);
