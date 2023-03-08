@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="manifest" href="/manifest.json">
+  <!-- <link rel="manifest" href="/manifest.json"> -->
   <link href="https://fonts.googleapis.com/css?family=Bangers&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles/main.css">
 
@@ -19,12 +19,11 @@
 <body id="goose-bg">
   <main class="goose-container">
     <button class="goose-btn goose-permission" id="action-permission" type="button">
-      Press to start
+      Press<br/>to start
     </button>
   
     <button class="goose-btn goose-shake" id="action-shake" type="button">
-      Shake<br/>
-      the goose!
+      Shake<br/>the goose!
     </button>
 
     <img class="goose-pic" src="/images/goose.svg" alt="White shakable gooose" width="250">
@@ -34,13 +33,13 @@
     </audio>
   </main>
 
-  <script>
+  <!-- <script>
     if('serviceWorker' in navigator) {
       navigator.serviceWorker
                .register('/sw.js')
                .then(() => console.log("Service Worker Registered"));
     }
-    </script>
+    </script> -->
     <script src="/scripts/main.js"></script>
 </body>
 </html>
